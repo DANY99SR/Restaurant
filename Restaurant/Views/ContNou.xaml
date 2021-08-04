@@ -1,0 +1,31 @@
+﻿<Window x:Class="Restaurant.Views.ContNou"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant.Views"
+        xmlns:ctx="clr-namespace:Restaurant.ViewModels"
+        mc:Ignorable="d"
+        Title="ContNou" Height="450" Width="400" Background="#1e462d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="../Images/mcdonalds.png">
+    <Window.DataContext>
+        <ctx:ContNouVM/>
+    </Window.DataContext>
+    <Grid>
+        <Label Content="Nume" HorizontalAlignment="Left" Margin="75,50,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        <Label Content="Prenume" HorizontalAlignment="Left" Margin="75,100,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        <Label Content="Adresa e-mail" HorizontalAlignment="Left" Margin="75,150,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Margin="75,200,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        <Label Content="Adresa livrare" HorizontalAlignment="Left" Margin="75,250,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        <Label Content="Parola" HorizontalAlignment="Left" Margin="75,300,0,0" VerticalAlignment="Top" Foreground="Gold" FontSize="15"/>
+        
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,50,0,0" TextWrapping="Wrap" Text="{Binding Nume}" VerticalAlignment="Top" Width="125"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,100,0,0" TextWrapping="Wrap" Text="{Binding Prenume}" VerticalAlignment="Top" Width="125"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,150,0,0" TextWrapping="Wrap" Text="{Binding Mail}" VerticalAlignment="Top" Width="125"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,200,0,0" TextWrapping="Wrap" Text="{Binding Telefon}" VerticalAlignment="Top" Width="125"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,250,0,0" TextWrapping="Wrap" Text="{Binding Adresa}" VerticalAlignment="Top" Width="125"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="200,300,0,0" TextWrapping="Wrap" Text="{Binding Parola}" VerticalAlignment="Top" Width="125"/>
+        
+        <Button Content="Finalizare" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" Width="100" Background="Transparent" BorderBrush="Gold" BorderThickness="2" Foreground="Gold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" FontSize="15" Command="{Binding AdaugaClientNou}"/>
+        <Button Content="Inapoi" HorizontalAlignment="Left" Margin="250,350,0,0" VerticalAlignment="Top" Width="100" Background="Transparent" BorderBrush="Gold" BorderThickness="2" Foreground="Gold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" FontSize="15" Click="Inapoi_Click"/>
+    </Grid>
+</Window>

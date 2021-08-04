@@ -1,0 +1,46 @@
+﻿<Window x:Class="Restaurant.Views.Comenzi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant.Views"
+        xmlns:ctx="clr-namespace:Restaurant.ViewModels"
+        mc:Ignorable="d"
+        Title="Comenzi" Height="475" Width="600" Background="#1e462d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="../Images/mcdonalds.png">
+    <Window.DataContext>
+        <ctx:ComenziVM/>
+    </Window.DataContext>
+    <Grid>
+        <ListBox HorizontalAlignment="Left" Height="300" Margin="25,75,0,0" VerticalAlignment="Top" Width="550" Background="Transparent" ItemsSource="{Binding Comenzi}" SelectedItem="{Binding P}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Height="75">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Data}" Foreground="Gold" FontSize="15"></Label>
+                            <Label Content="{Binding OraLivrarii}" Foreground="Gold" FontSize="15" Margin="0,0,0,0"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Nume: " Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="Prenume: " Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="Adresa: " Foreground="Gold" FontSize="10"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding NumeClient}" Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="{Binding PrenumeClient}" Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="{Binding Adresa}" Foreground="Gold" FontSize="10"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding AfisareCostMancare}" Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="{Binding AfisareCostTransport}" Foreground="Gold" FontSize="10"></Label>
+                            <Label Content="{Binding AfisareCostTotal}" Foreground="Gold" FontSize="10"></Label>
+                        </StackPanel>
+                        <Label Content="{Binding Stare}" Foreground="Gold" FontSize="20"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Label Content="COMENZI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225,10,0,0" Foreground="Gold" FontSize="30"></Label>
+
+    </Grid>
+</Window>
